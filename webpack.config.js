@@ -1,21 +1,9 @@
 // webpack.config.js
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/main.ts',
-  mode: 'development',
-  devServer: {
-    port: 4301,
-    historyApiFallback: true,
-    static: path.join(__dirname, 'public'),
-    headers: {
-      'Access-Control-Allow-Origin': '*', // ✅ Cho phép từ bất kỳ origin
-    },
-  },
-  output: {
-    publicPath: 'auto',
-    clean: true,
-  },
   resolve: {
     extensions: ['.ts', '.js'],
     alias: {
@@ -31,4 +19,17 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'public'),
+          to: '',
+          globOptions: {
+            ignore: ['**/index.html'], // ⛔ bỏ qua index.html
+          },
+        },
+      ],
+    }),
+  ],
 };

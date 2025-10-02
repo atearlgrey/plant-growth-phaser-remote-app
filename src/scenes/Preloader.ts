@@ -1,11 +1,12 @@
 import Phaser from 'phaser'
-import AnimationKeys from '~/consts/AnimationKeys'
 import SceneKeys from '~/consts/SceneKeys'
 import TextureKeys from '~/consts/TextureKeys'
 import VoiceKeys from '~/consts/VoiceKeys'
+import { joinUrl } from '~/core/utils/url-helper'
 
-const assetBase = (window as any).__assets__ || 'assets';
-const dataBase = (window as any).__data__ || 'data';
+const baseUrl = (window as any).__baseUrl__ || '';
+const assetBase = joinUrl(baseUrl, 'assets');
+const dataBase = joinUrl(baseUrl, 'data');
 
 export default class Preloader extends Phaser.Scene {
     constructor() {

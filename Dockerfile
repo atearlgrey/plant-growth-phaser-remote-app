@@ -1,29 +1,21 @@
-# Use an official Node.js runtime as a parent image
-FROM node:16-alpine AS builder
-
-# Set the working directory in the container
+# -------- Stage 1 --------
+FROM node:20.9-alpine AS deps
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
+RUN npm ci
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code to the working directory
+# -------- Stage 2 --------
+FROM deps AS build
+WORKDIR /app
 COPY . .
 
-# Build the application
-RUN npm run build:prod
+# Nhận biến môi trường từ build arg
+ARG env=prod
+RUN npm run build:${env}
 
-# Use an official Nginx image as a parent image
+# -------- Stage 3 --------
 FROM nginx:alpine
-
-# Copy the built files to the Nginx HTML directory
-COPY --from=builder /app/dist /usr/share/nginx/html
-
-# Expose port 80 to serve the application
+COPY --from=build /app/dist /usr/share/nginx/html
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
-
-# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]

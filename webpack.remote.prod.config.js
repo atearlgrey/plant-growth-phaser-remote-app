@@ -1,27 +1,17 @@
-// webpack.remote.config.js
 const { merge } = require('webpack-merge');
 const { ModuleFederationPlugin } = require('webpack').container;
-const path = require('path');
 const common = require('./webpack.config.js');
 
 module.exports = merge(common, {
-  mode: 'development',
-  devServer: {
-    port: 4301,
-    historyApiFallback: true,
-    static: path.join(__dirname, 'public'),
-    watch: true,
-    headers: {
-      'Access-Control-Allow-Origin': '*', // ✅ Cho phép từ bất kỳ origin
-    },
-  },
+  mode: 'production',
   output: {
     publicPath: 'auto',
-    clean: false,
+    clean: true,
+    filename: '[name].[contenthash].js',
     library: { type: 'module' },
   },
   experiments: {
-    outputModule: true, // cần cho library.type = module
+    outputModule: true,
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -31,7 +21,7 @@ module.exports = merge(common, {
         './PhaserMount': './src/phaser-entry.ts',
       },
       shared: {
-        phaser: { singleton: true }, // remote không eager
+        phaser: { singleton: true },
       },
       library: { type: 'module' },
     }),
