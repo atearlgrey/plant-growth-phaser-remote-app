@@ -1,7 +1,7 @@
 import Phaser from 'phaser'
-import TextureKeys from 'consts/TextureKeys'
-import EventKeys from 'consts/EventKeys'
-import PotType from 'consts/PotType'
+import TextureKeys from '~/consts/TextureKeys'
+import EventKeys from '~/consts/EventKeys'
+import PotType from '~/consts/PotType'
 
 export default class Table extends Phaser.GameObjects.Image {
   constructor(scene: Phaser.Scene, x: number, y: number) {

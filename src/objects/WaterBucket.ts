@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import TextureKeys from 'consts/TextureKeys';
+import TextureKeys from '~/consts/TextureKeys';
 
 export default class WaterBucket extends Phaser.GameObjects.Image {
   private isWatering = false;

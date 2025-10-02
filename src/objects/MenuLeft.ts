@@ -1,8 +1,8 @@
 import Phaser from 'phaser'
-import EventKeys from 'consts/EventKeys'
-import StateKeys from 'consts/AppStates'
-import AppStates from 'consts/AppStates'
-import TextureKeys from 'consts/TextureKeys'
+import EventKeys from '~/consts/EventKeys'
+import StateKeys from '~/consts/AppStates'
+import AppStates from '~/consts/AppStates'
+import TextureKeys from '~/consts/TextureKeys'
 
 export default class LeftMenu extends Phaser.GameObjects.Container {
   private mainButton!: Phaser.GameObjects.Image

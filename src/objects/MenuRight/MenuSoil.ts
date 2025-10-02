@@ -1,10 +1,10 @@
 import Phaser from 'phaser'
-import { arrangeItemsCenter } from 'helpers/GraphicItemArrange'
+import { arrangeItemsCenter } from '~/helpers/GraphicItemArrange'
 
-import EventKeys from 'consts/EventKeys'
-import TextureKeys from 'consts/TextureKeys'
-import SoilType from 'consts/SoilType'
-import FontKeys from 'consts/FontKeys'
+import EventKeys from '~/consts/EventKeys'
+import TextureKeys from '~/consts/TextureKeys'
+import SoilType from '~/consts/SoilType'
+import FontKeys from '~/consts/FontKeys'
 
 export default class SoilMenu extends Phaser.GameObjects.Container {
   private soilIcons: Phaser.GameObjects.Image[] = []

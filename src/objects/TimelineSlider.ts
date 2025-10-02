@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
-import TextureKeys from 'consts/TextureKeys'
-import EventKeys from 'consts/EventKeys'
+import TextureKeys from '~/consts/TextureKeys'
+import EventKeys from '~/consts/EventKeys'
 
 export default class TimelineSlider extends Phaser.GameObjects.Container {
   private track: Phaser.GameObjects.Image
@@ -14,12 +14,11 @@ export default class TimelineSlider extends Phaser.GameObjects.Container {
   private changeCallback?: (week: number) => void
 
   constructor(scene: Phaser.Scene, screenWidth: number, screenHeight: number, totalWeeks = 4) {
+    super(scene, 0, 0);
     const barWidth = screenWidth / 4
     const x = (screenWidth - barWidth) / 2
     const y = screenHeight - 60
-
-    super(scene, x, y)
-
+    this.setPosition(x, y);
     this.barWidth = barWidth
     this.totalWeeks = totalWeeks
 

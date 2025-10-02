@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
-import FontKeys from 'consts/FontKeys';
-import SoilType from 'consts/SoilType';
+import FontKeys from '~/consts/FontKeys';
+import SoilType from '~/consts/SoilType';
 
 interface PlantConfig {
   leaves: number;

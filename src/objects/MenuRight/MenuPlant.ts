@@ -1,10 +1,10 @@
 import Phaser from 'phaser'
-import { arrangeItemsCenter, arrangeItemsLeft } from 'helpers/GraphicItemArrange'
+import { arrangeItemsCenter, arrangeItemsLeft } from '~/helpers/GraphicItemArrange'
 
-import EventKeys from 'consts/EventKeys'
-import TextureKeys from 'consts/TextureKeys'
-import PlantType from 'consts/PlantType'
-import FontKeys from 'consts/FontKeys'
+import EventKeys from '~/consts/EventKeys'
+import TextureKeys from '~/consts/TextureKeys'
+import PlantType from '~/consts/PlantType'
+import FontKeys from '~/consts/FontKeys'
 
 export default class PlantMenu extends Phaser.GameObjects.Container {
   private leafIcons: Phaser.GameObjects.Image[] = []

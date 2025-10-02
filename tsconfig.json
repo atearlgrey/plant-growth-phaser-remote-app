@@ -1,32 +1,32 @@
 {
-	"compilerOptions": {
-		"target": "es2017",
-		"module": "es6",
-		"lib": ["es2017", "dom"],
-		"strict": true,
-		"noImplicitAny": false,
-		"noEmit": true,
-		"allowJs": true,
-		"jsx": "preserve",
-		"importHelpers": true,
-		"moduleResolution": "node",
-		"experimentalDecorators": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"baseUrl": "./src",
-		"paths": {
-		  "~/*": ["./*"]
-		},
-		"typeRoots": [
-			"node_modules/@types",
-			"node_modules/phaser/types"
-		],
-		"types": [
-			"phaser"
-		]
-	},
-	"include": [
-		"src/**/*"
-	]
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "esnext",          // ESNext để Module Federation hoạt động tốt
+    "lib": ["es2017", "dom"],
+    "strict": true,
+    "noImplicitAny": false,
+    "noEmit": false,             // ✅ cho phép xuất output
+    "allowJs": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/phaser/types"
+    ],
+    "types": [
+      "phaser"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

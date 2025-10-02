@@ -1,8 +1,8 @@
 import Phaser from 'phaser'
-import EventKeys from 'consts/EventKeys'
-import FontKeys from 'consts/FontKeys'
-import TextureKeys from 'consts/TextureKeys'
-import WaterType from 'consts/WaterType'
+import EventKeys from '~/consts/EventKeys'
+import FontKeys from '~/consts/FontKeys'
+import TextureKeys from '~/consts/TextureKeys'
+import WaterType from '~/consts/WaterType'
 
 export default class WaterMenu extends Phaser.GameObjects.Container {
   private waterButtons: iRadioButton[] = []

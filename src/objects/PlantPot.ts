@@ -1,9 +1,9 @@
 import Phaser from 'phaser'
-import TextureKeys from 'consts/TextureKeys'
-import EventKeys from 'consts/EventKeys'
-import PotType from 'consts/PotType'
-import PlantType from 'consts/PlantType'
-import SoilType from 'consts/SoilType'
+import TextureKeys from '~/consts/TextureKeys'
+import EventKeys from '~/consts/EventKeys'
+import PotType from '~/consts/PotType'
+import PlantType from '~/consts/PlantType'
+import SoilType from '~/consts/SoilType'
 
 /** Config kích thước và origin theo loại pot */
 const PotConfig: Record<PotType, { width: number; height: number; origin: number }> = {

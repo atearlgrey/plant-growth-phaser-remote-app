@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 
-import EventKeys from 'consts/EventKeys'
+import EventKeys from '~/consts/EventKeys'
 
 import Panel from '../Panel'
 import DecorLine from '../DecorLine'
@@ -30,12 +30,15 @@ export default class RightMenu extends Phaser.GameObjects.Container {
     defaultLightMode: string,
     defaultWaterMode: string,
   ) {
+    super(scene, 0, 0)
+    
     const marginRight = 20
     const marginTop = 50
     const decorLineHeight = 4
     const decorLineColor = 0x0639c4ff
 
-    super(scene, screenWidth - 300 - marginRight, marginTop)
+    this.setPosition(screenWidth - 300 - marginRight, marginTop)
+
     this.defaultLightMode = defaultLightMode;
     this.defaultWaterMode = defaultWaterMode;
 

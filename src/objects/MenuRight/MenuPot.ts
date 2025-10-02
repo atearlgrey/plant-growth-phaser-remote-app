@@ -1,12 +1,12 @@
 import Phaser from 'phaser'
-import { arrangeItemsCenter } from 'helpers/GraphicItemArrange'
+import { arrangeItemsCenter } from '~/helpers/GraphicItemArrange'
 
-import EventKeys from 'consts/EventKeys'
-import TextureKeys from 'consts/TextureKeys'
-import FontKeys from 'consts/FontKeys'
+import EventKeys from '~/consts/EventKeys'
+import TextureKeys from '~/consts/TextureKeys'
+import FontKeys from '~/consts/FontKeys'
 
-import PlantType from 'consts/PlantType'
-import PotType from 'consts/PotType'
+import PlantType from '~/consts/PlantType'
+import PotType from '~/consts/PotType'
 
 export default class PotMenu extends Phaser.GameObjects.Container {
   private potIcons: Phaser.GameObjects.Image[] = []

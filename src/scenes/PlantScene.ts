@@ -1,27 +1,27 @@
 import Phaser from 'phaser';
-import SceneKeys from 'consts/SceneKeys';
-import EventKeys from 'consts/EventKeys';
-import TextureKeys from 'consts/TextureKeys';
+import SceneKeys from '~/consts/SceneKeys';
+import EventKeys from '~/consts/EventKeys';
+import TextureKeys from '~/consts/TextureKeys';
 
-import LightType from 'consts/LightType';
+import LightType from '~/consts/LightType';
 
-import Window from 'objects/Window';
-import Lamp from 'objects/Lamp';
+import Window from '~/objects/Window';
+import Lamp from '~/objects/Lamp';
 
-import LeftPanel from 'objects/MenuLeft';
-import RightPanel from 'objects/MenuRight/MenuRight';
-import TimelineSlider from 'objects/TimelineSlider';
-import Table from 'objects/Table';
-import Pot from 'objects/PlantPot';
-import Plant from 'objects/Plant';
-import StateKeys from 'consts/AppStates';
-import VoiceKeys from 'consts/VoiceKeys';
-import WaterType from 'consts/WaterType';
-import WaterBucket from 'objects/WaterBucket';
+import LeftPanel from '~/objects/MenuLeft';
+import RightPanel from '~/objects/MenuRight/MenuRight';
+import TimelineSlider from '~/objects/TimelineSlider';
+import Table from '~/objects/Table';
+import Pot from '~/objects/PlantPot';
+import Plant from '~/objects/Plant';
+import StateKeys from '~/consts/AppStates';
+import VoiceKeys from '~/consts/VoiceKeys';
+import WaterType from '~/consts/WaterType';
+import WaterBucket from '~/objects/WaterBucket';
 import PotType from '~/consts/PotType';
 import SoilType from '~/consts/SoilType';
-import Ruler50 from 'objects/Ruler50';
-import ThermoHygrometer from 'objects/ThermoHygrometer';
+import Ruler50 from '~/objects/Ruler50';
+import ThermoHygrometer from '~/objects/ThermoHygrometer';
 
 export default class PlantScene extends Phaser.Scene {
   private plant!: Plant;
@@ -65,7 +65,6 @@ export default class PlantScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.json('growthData', './data/growth.json');
   }
 
   create() {

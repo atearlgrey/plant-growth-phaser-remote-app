@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
-import TextureKeys from 'consts/TextureKeys'
-import LightType from 'consts/LightType'
+import TextureKeys from '~/consts/TextureKeys'
+import LightType from '~/consts/LightType'
 
 export default class Lamp extends Phaser.GameObjects.Image {
   constructor(scene: Phaser.Scene, x: number, y: number) {
