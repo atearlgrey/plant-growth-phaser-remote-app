@@ -3,14 +3,18 @@ const { merge } = require('webpack-merge');
 const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const common = require('./webpack.config.js');
+const { dir } = require('console');
 
 module.exports = merge(common, {
   mode: 'development',
   devServer: {
     port: 4301,
     historyApiFallback: true,
-    static: path.join(__dirname, 'public'),
-    watch: true,
+    static: {
+      directory: path.join(__dirname, 'public'),
+      watch: true,
+    },
+    watchFiles: ['src/**/*'],
     headers: {
       'Access-Control-Allow-Origin': '*', // ✅ Cho phép từ bất kỳ origin
     },

@@ -5,7 +5,15 @@ import PlantScene from './scenes/PlantScene'
 import ResultScene from './scenes/ResultScene';
 import ConclusionScene from "./scenes/ConclusionScene";
 
+let game: Phaser.Game | null = null;
+
 export function startGame(containerId: string) {
+
+  if (game) {
+    game.destroy(true); // đảm bảo huỷ game cũ
+    game = null;
+  }
+
   const config: Phaser.Types.Core.GameConfig = {
     type: Phaser.WEBGL,
     width: 1920,
@@ -24,5 +32,14 @@ export function startGame(containerId: string) {
     dom: { createContainer: true },
     scene: [Preloader, PlantScene, ResultScene, ConclusionScene]
   }
-  new Phaser.Game(config)
+
+  game = new Phaser.Game(config);
+  return game;
+}
+
+export function destroyGame() {
+  if (game) {
+    game.destroy(true);
+    game = null;
+  }
 }

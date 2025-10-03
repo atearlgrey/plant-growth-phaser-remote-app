@@ -7,9 +7,12 @@ module.exports = merge(common, {
   mode: 'development',
   devServer: {
     port: 4301,
-    static: path.resolve(__dirname, 'public'),
+    static: {
+      directory: path.join(__dirname, 'public'),
+      watch: true,
+    },
+    watchFiles: ['src/**/*'],
     historyApiFallback: true,
-    watch: true,
   },
   output: {
     publicPath: 'auto',
